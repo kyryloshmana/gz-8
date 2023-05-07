@@ -37,7 +37,10 @@ public class Main {
                 case "5" -> createGroup();
                 case "6" -> taskDone();
                 case "7" -> showGroupDetails();
-                case "8" -> displayStudents();
+                case "8" -> {
+                    displayStudents();
+                    displayStudentsLieder();
+                }
                 default -> System.out.println("No such menu");
             }
             System.out.println(menu);
@@ -53,6 +56,8 @@ public class Main {
             System.out.print(studentData.getStudentFirstName() + " ");
             System.out.println(studentData.getStudentLastName() + " ");
         }
+    }
+    static void displayStudentsLieder(){
         HashMap<Integer, Student> studentsLieder = studentLiederManager.getStudentsLieder();
         for (Student studentData : studentsLieder.values()){
             System.out.print(studentData.getStudentId() + " ");
